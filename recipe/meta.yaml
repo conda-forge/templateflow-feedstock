@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/templateflow-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/templateflow-{{ version }}.tar.gz
   sha256: 6b5ec6a566b4e21d0db8588fef1aa8c491c542e05d9433054100445a4c2c9cd0
 
 build:
@@ -14,17 +14,17 @@ build:
   entry_points:
     - templateflow = templateflow.cli:main
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - hatchling
     - hatch-vcs
     - nipreps-versions
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - pybids >=0.15.2
     - importlib-resources >=5.7
     - requests
@@ -38,6 +38,7 @@ test:
     - templateflow --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/templateflow/python-client
