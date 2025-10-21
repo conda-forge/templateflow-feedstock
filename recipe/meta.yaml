@@ -1,5 +1,5 @@
 {% set name = "templateflow" %}
-{% set version = "25.0.4" %}
+{% set version = "25.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/templateflow-{{ version }}.tar.gz
-  sha256: 9ba0aedba1989da468ccecdcfe379561cc49a94d65aadd1039567418f7aad6d3
+  sha256: bf2714c3359ff09c867f3e705ed8b54a13ea1064046a5f0a63f40c67abbae0c3
 
 build:
   noarch: python
