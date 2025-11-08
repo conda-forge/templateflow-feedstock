@@ -29,6 +29,8 @@ requirements:
     - importlib-resources >=5.7
     - requests
     - tqdm
+    - platformdirs >=4.0
+    - acres >=0.5.0
 
 test:
   imports:
